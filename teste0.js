@@ -1,8 +1,12 @@
-const readline = require('readline-sync');
+        const readline = require('readline')
+const rl = readline.createInterface({
+    input : process.stdin,
+    output : process.stdout
+})
 
 let alunos = [];
 
-// Função para cadastrar aluno
+
 function cadastrarAluno() {
     let nome = readline.question("Nome: ");
     let idade = parseInt(readline.question("Idade: "));
@@ -20,7 +24,6 @@ function cadastrarAluno() {
     console.log("Aluno cadastrado com sucesso!\n");
 }
 
-// Função para pesquisar por nome
 function pesquisarPorNome() {
     let nomeBusca = readline.question("Digite o nome: ").toLowerCase();
 
@@ -34,7 +37,7 @@ function pesquisarPorNome() {
     }
 }
 
-// Listar todos
+
 function listarTodos() {
     if (alunos.length === 0) {
         console.log("Nenhum aluno cadastrado.");
@@ -44,7 +47,7 @@ function listarTodos() {
     }
 }
 
-// Excluir aluno
+
 function excluirAluno() {
     let nome = readline.question("Digite o nome do aluno para excluir: ");
 
@@ -58,7 +61,7 @@ function excluirAluno() {
     }
 }
 
-// Maior nota
+
 function maiorNota() {
     if (alunos.length === 0) {
         console.log("Nenhum aluno cadastrado.");
@@ -70,7 +73,7 @@ function maiorNota() {
     console.log(maior);
 }
 
-// Média das notas
+
 function mediaNotas() {
     if (alunos.length === 0) {
         console.log("Nenhum aluno cadastrado.");
@@ -83,7 +86,7 @@ function mediaNotas() {
     console.log("Média das notas:", media.toFixed(2));
 }
 
-// Menu
+
 function menu() {
     let opcao;
 

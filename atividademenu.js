@@ -98,7 +98,7 @@ function listarTodos() {
     if (alunos.length === 0) {
         console.log("Nenhum aluno cadastrado.");
     } else {
-        console.table(alunos);
+        console.log(alunos.length());
     }
 
     menu();

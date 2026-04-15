@@ -75,9 +75,14 @@ function marcar() {
     return
   }
   rl.question('Digite o indice do lembrete concluido!', (i)=>{
-    let lembretes = (lembretes)
-    salvar.splice(i, 1)
-    console.log(`Lembrete ${lembretes.lembrete} foi concluido`)
+    let index = (i)
+    if(isNaN(index) || index < 0 || index >= salvar.length){
+        console.log('indice invalido')
+        menu()
+
+    }
+    salvar[index].concluido = true
+    console.log(`Lembrete ${salvar[index].lembrete} foi concluido`)
     menu()
   })
 
